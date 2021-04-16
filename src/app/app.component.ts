@@ -18,6 +18,7 @@ export class AppComponent {
   constructor() {
     this.initialiserModel();
     this.remplirTiroir();
+    this.initialiserGameLibrary();
   }
 
   initialiserModel(): void {
@@ -57,6 +58,10 @@ export class AppComponent {
     this.tiroir.push(couteau);
   }
 
-  // git checkout -b nom_branche
+  private initialiserGameLibrary(): void {
+    // TODO :   créer un objet de type user
+    //          créer un objet de type library et la lier au user
+    //          créer un ou plusieurs objet(s) de type game, et le(s) lier à la library
+  }
 }
 
