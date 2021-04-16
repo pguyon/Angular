@@ -56,5 +56,7 @@ export class AppComponent {
     this.tiroir.push(cuillere);
     this.tiroir.push(couteau);
   }
+
+  // git checkout -b nom_branche
 }
 
