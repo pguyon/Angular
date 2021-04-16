@@ -1,5 +1,5 @@
 
-export class Category {
+export class Energy {
 
   private _id: number;
   private _name: string;

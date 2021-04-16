@@ -1,11 +1,20 @@
 import {Brand} from './brand';
-import {Category} from './category';
+import {Energy} from './energy';
 
 export class Model {
 
+  private _id: string;
   private _name: string;
   private _brand: Brand;
-  private _category: Category;
+  private _energies: Array<Energy>;
+
+  get id(): string {
+    return this._id;
+  }
+
+  set id(value: string) {
+    this._id = value;
+  }
 
   get name(): string {
     return this._name;
@@ -23,17 +32,19 @@ export class Model {
     this._brand = value;
   }
 
-  get category(): Category {
-    return this._category;
+  get energies(): Array<Energy> {
+    return this._energies;
   }
 
-  set category(value: Category) {
-    this._category = value;
+  constructor() {
+    this._energies = new Array<Energy>();
   }
 
-  constructor(name: string, brand: Brand, category: Category) {
-    this._name = name;
-    this._brand = brand;
-    this._category = category;
+  addEnergy(energy: Energy): void {
+    // Si je passe bien une vraie énergie à mon setter
+    if (energy) {
+      // Alors, je l'ajoute au tableau des énergies
+      this._energies.push(energy);
+    }
   }
 }
