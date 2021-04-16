@@ -21,6 +21,7 @@ export class Library {
 
   constructor(name: string) {
     this._name = name;
+    this._games = new Array<Game>();
   }
 
   /**

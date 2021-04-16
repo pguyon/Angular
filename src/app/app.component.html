@@ -305,52 +305,100 @@
 </style>
 
 <div class="content" role="main">
-  <div>
-    Contenu du tiroir
-  </div>
-  <table>
-    <thead>
-      <tr>
-        <th>
-          Nom du couvert
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let couvert of tiroir">
-        <td>{{ couvert.name }}</td>
-      </tr>
-    </tbody>
-  </table>
+<!--  <div>-->
+<!--    Contenu du tiroir-->
+<!--  </div>-->
+<!--  <table>-->
+<!--    <thead>-->
+<!--      <tr>-->
+<!--        <th>-->
+<!--          Nom du couvert-->
+<!--        </th>-->
+<!--      </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--      <tr *ngFor="let couvert of tiroir">-->
+<!--        <td>{{ couvert.name }}</td>-->
+<!--      </tr>-->
+<!--    </tbody>-->
+<!--  </table>-->
 
 
+<!--  <div>-->
+<!--    Détail de mon model de voiture-->
+<!--  </div>-->
+<!--  <table>-->
+<!--    <thead>-->
+<!--      <tr>-->
+<!--        <th>-->
+<!--          Nom du modèle-->
+<!--        </th>-->
+<!--        <th>-->
+<!--          Nom de la marque-->
+<!--        </th>-->
+<!--        <th>-->
+<!--          Energies disponibles-->
+<!--        </th>-->
+<!--      </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--      <tr>-->
+<!--        <td>{{ model }}</td>-->
+<!--        <td>{{ model.brand.name }}</td>-->
+<!--        <td *ngFor="let energy of model.energies">-->
+<!--          {{ energy.name }}-->
+<!--        </td>-->
+<!--      </tr>-->
+<!--    </tbody>-->
+<!--  </table>-->
+
   <div>
-    Détail de mon model de voiture
+    <p>
+      Nom :
+      <span>{{ user.name }}</span>
+    </p>
+    <p>
+      Email :
+      <span>{{ user.email }}</span>
+    </p>
+    <p>
+      Nickname :
+      <span>{{ user.nickname }}</span>
+    </p>
+    <p>
+      Bibliothèque de jeux disponibles :
+      <span>{{ user.library.name }}</span>
+    </p>
+    <div>
+      <p>
+        Jeux disponibles :
+      </p>
+      <table>
+        <thead>
+        <tr>
+          <th>
+            Nom du jeux
+          </th>
+          <th>
+            Prix du jeux
+          </th>
+          <th>
+            Date de sortie du jeux
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let game of user.library.games">
+            <td>{{ game.name }}</td>
+            <td>{{ game.price }}</td>
+            <td>
+              {{ game.publishedAt|date: 'd/m/Y' }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <table>
-    <thead>
-      <tr>
-        <th>
-          Nom du modèle
-        </th>
-        <th>
-          Nom de la marque
-        </th>
-        <th>
-          Energies disponibles
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{ model }}</td>
-        <td>{{ model.brand.name }}</td>
-        <td *ngFor="let energy of model.energies">
-          {{ energy.name }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </div>
 
 <router-outlet></router-outlet>

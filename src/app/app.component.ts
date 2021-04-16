@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Brand} from '../models/brand';
 import {Energy} from '../models/energy';
 import {Model} from '../models/model';
 import {Couvert} from '../models/couvert';
+import {User} from '../models/user';
+import {Library} from '../models/library';
+import {Game} from '../models/game';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +17,7 @@ export class AppComponent {
   brand: Brand;
   model: Model;
   tiroir: Array<Couvert>;
+  user: User;
 
   constructor() {
     this.initialiserModel();
@@ -58,10 +62,28 @@ export class AppComponent {
     this.tiroir.push(couteau);
   }
 
-  private initialiserGameLibrary(): void {
+  initialiserGameLibrary(): void {
     // TODO :   créer un objet de type user
+    // this.user : on appelle l'attribut de la classe courante, de nom : user
+    this.user = new User('Kevin', 'kevin@drosalys.fr', 'KvN');
+
     //          créer un objet de type library et la lier au user
+    // la propriété library de la variable user (qui est de type User) est elle-même de type Library
+    // Je peux donc l'instancier et faire un new Library() dessus
+    this.user.library = new Library('Steam');
+
     //          créer un ou plusieurs objet(s) de type game, et le(s) lier à la library
+    // Je déclare une variable de nom game, comme étant une instance de la classe Game
+    // Avec les attributs passés en paramètre au constructeur
+    const game = new Game('Civilization 6', 45.00, new Date());
+
+    // La variable game est maintenant une instance de la classe Game, je peux peux donc la passer
+    // en paramètre à la méthode addGame de la classe Library
+    // (PS : pour visualiser tout ça, penser à la navigation entre les classes ! (CTRL + clic gauche))
+    this.user.library.addGame(game);
+
+    const game2 = new Game('Civilization 5', 25.00, new Date());
+    this.user.library.addGame(game2);
   }
 }
 
