@@ -1,27 +1,41 @@
-# InitialProject
+### Récupération du projet (à ne faire qu'une seule fois)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+`git clone https://github.com/TyTy-cf/hb-angular-firstapp.git`
 
-## Development server
+Une fois le projet récupéré, il faut faire un 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`npm install`
 
-## Code scaffolding
+### Une fois le projet récupéré...
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Par défaut vous serez sur la branche `main`, vous pouvez le vérifier par la commande `git branch -l` 
 
-## Build
+Il faut créer une branche, car je ne veux pas que vous travailliez sur la branche `main`, afin d'éviter des conflits à régler.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Pour créer une branche il faut utiliser la commande :
 
-## Running unit tests
+`git checkout -b xxxx` où xxxx est le nom de votre branche
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Et voilà vous pouvez travailler sur votre nouvelle branche !
 
-## Running end-to-end tests
+### Mettre à jour le projet
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+#### 1. Si vous êtes sur votre branche
 
-## Further help
+Vérifier d'abord vos changements, via un `git status`
+Si des modifications ont été faite, alors il faut d'abord les sauvegarder :
+- `git add *` ajoute les fichiers au prochain commit
+- `git commit -m "votre message de commit"` commit vos changements, autrement dit ils sont sauvés !
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Voilà vos changements sont sauvegardés !
+
+Il faut aller sur la branche principale :
+`git checkout main`
+
+#### 2. Si vous n'étiez pas sur votre branche (ou si vous avez fait le 1.)
+
+Faire un `git pull` et récupérer les changements
+
+Vous pouvez de nouveau faire un `git checkout -b xxxx` pour vous créer une nouvelle branche pour continuer, sans détruire votre travail qui était sur une autre branche
+
+(PS : à tout moment vous pouvez faire un `git branch -l` pour vous sur quelle branche vous êtes !)

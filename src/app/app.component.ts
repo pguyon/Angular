@@ -7,7 +7,6 @@ import {User} from '../models/user';
 import {Library} from '../models/library';
 import {Game} from '../models/game';
 import {Region} from '../models/region';
-import {NewCommand} from '@angular/cli/commands/new-impl';
 import {AbstractNameProperty} from '../models/abstract-name';
 
 @Component({
