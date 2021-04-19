@@ -38,4 +38,4 @@ Faire un `git pull` et récupérer les changements
 
 Vous pouvez de nouveau faire un `git checkout -b xxxx` pour vous créer une nouvelle branche pour continuer, sans détruire votre travail qui était sur une autre branche
 
-(PS : à tout moment vous pouvez faire un `git branch -l` pour vous sur quelle branche vous êtes !)
+(PS : à tout moment vous pouvez faire un `git branch -l` pour voir sur quelle branche vous êtes !)
