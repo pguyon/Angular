@@ -6,6 +6,7 @@ import {Couvert} from '../models/couvert';
 import {User} from '../models/user';
 import {Library} from '../models/library';
 import {Game} from '../models/game';
+import {Region} from '../models/region';
 
 @Component({
   selector: 'app-root',
@@ -18,11 +19,13 @@ export class AppComponent {
   model: Model;
   tiroir: Array<Couvert>;
   user: User;
+  auvergneRA: Region;
 
   constructor() {
     this.initialiserModel();
     this.remplirTiroir();
     this.initialiserGameLibrary();
+    this.howToWorkWithInterface();
   }
 
   initialiserModel(): void {
@@ -84,6 +87,18 @@ export class AppComponent {
 
     const game2 = new Game('Civilization 5', 25.00, new Date());
     this.user.library.addGame(game2);
+  }
+
+  howToWorkWithInterface(): void {
+    // Assignations des attributs de l'interface
+    // (Un objet en javascript peut être représenté avec les accolades et les noms des attributs)
+    this.auvergneRA = {
+      nom: 'Auvergne-Rhône-Alpes',
+      code: '98',
+    };
+    // Modification des attributs de l'interface, une fois que celle-ci a été "initialisée"
+    // this.auvergneRA.nom = 'Auvergne-Rhône-Alpes';
+    this.auvergneRA.code = '84';
   }
 }
 

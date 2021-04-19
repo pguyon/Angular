@@ -352,52 +352,63 @@
 <!--    </tbody>-->
 <!--  </table>-->
 
+<!--  <div>-->
+<!--    <p>-->
+<!--      Nom :-->
+<!--      <span>{{ user.name }}</span>-->
+<!--    </p>-->
+<!--    <p>-->
+<!--      Email :-->
+<!--      <span>{{ user.email }}</span>-->
+<!--    </p>-->
+<!--    <p>-->
+<!--      Nickname :-->
+<!--      <span>{{ user.nickname }}</span>-->
+<!--    </p>-->
+<!--    <p>-->
+<!--      Bibliothèque de jeux disponibles :-->
+<!--      <span>{{ user.library.name }}</span>-->
+<!--    </p>-->
+<!--    <div>-->
+<!--      <p>-->
+<!--        Jeux disponibles :-->
+<!--      </p>-->
+<!--      <table>-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--          <th>-->
+<!--            Nom du jeux-->
+<!--          </th>-->
+<!--          <th>-->
+<!--            Prix du jeux-->
+<!--          </th>-->
+<!--          <th>-->
+<!--            Date de sortie du jeux-->
+<!--          </th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--          <tr *ngFor="let game of user.library.games">-->
+<!--            <td>{{ game.name }}</td>-->
+<!--            <td>{{ game.price }}</td>-->
+<!--            <td>-->
+<!--              {{ game.publishedAt|date: 'd/m/Y' }}-->
+<!--            </td>-->
+<!--          </tr>-->
+<!--        </tbody>-->
+<!--      </table>-->
+<!--    </div>-->
   <div>
     <p>
-      Nom :
-      <span>{{ user.name }}</span>
+      Nom région
+      <strong>{{ auvergneRA.nom }}</strong>
     </p>
+  </div>
+  <div>
     <p>
-      Email :
-      <span>{{ user.email }}</span>
+      Code région
+      <strong>{{ auvergneRA.code }}</strong>
     </p>
-    <p>
-      Nickname :
-      <span>{{ user.nickname }}</span>
-    </p>
-    <p>
-      Bibliothèque de jeux disponibles :
-      <span>{{ user.library.name }}</span>
-    </p>
-    <div>
-      <p>
-        Jeux disponibles :
-      </p>
-      <table>
-        <thead>
-        <tr>
-          <th>
-            Nom du jeux
-          </th>
-          <th>
-            Prix du jeux
-          </th>
-          <th>
-            Date de sortie du jeux
-          </th>
-        </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let game of user.library.games">
-            <td>{{ game.name }}</td>
-            <td>{{ game.price }}</td>
-            <td>
-              {{ game.publishedAt|date: 'd/m/Y' }}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
   </div>
 </div>
 
