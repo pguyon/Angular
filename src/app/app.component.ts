@@ -7,6 +7,7 @@ import {User} from '../models/user';
 import {Library} from '../models/library';
 import {Game} from '../models/game';
 import {Region} from '../models/region';
+import {NewCommand} from '@angular/cli/commands/new-impl';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ export class AppComponent {
   tiroir: Array<Couvert>;
   user: User;
   auvergneRA: Region;
+  energy: Energy;
 
   constructor() {
     this.initialiserModel();
@@ -99,6 +101,8 @@ export class AppComponent {
     // Modification des attributs de l'interface, une fois que celle-ci a été "initialisée"
     // this.auvergneRA.nom = 'Auvergne-Rhône-Alpes';
     this.auvergneRA.code = '84';
+    // Utilisation de la classe Energy qui implémente l'interface InterfaceEnergy
+    this.energy = new Energy(1, 'Diesel');
   }
 }
 
