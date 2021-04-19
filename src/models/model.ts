@@ -1,10 +1,10 @@
 import {Brand} from './brand';
 import {Energy} from './energy';
+import {AbstractNameProperty} from './abstract-name';
 
-export class Model {
+export class Model extends AbstractNameProperty {
 
   private _id: string;
-  private _name: string;
   private _brand: Brand;
   private _energies: Array<Energy>;
 
@@ -14,14 +14,6 @@ export class Model {
 
   set id(value: string) {
     this._id = value;
-  }
-
-  get name(): string {
-    return this._name;
-  }
-
-  set name(value: string) {
-    this._name = value;
   }
 
   get brand(): Brand {
@@ -36,7 +28,8 @@ export class Model {
     return this._energies;
   }
 
-  constructor() {
+  constructor(name: string) {
+    super(name);
     this._energies = new Array<Energy>();
   }
 

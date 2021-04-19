@@ -8,6 +8,7 @@ import {Library} from '../models/library';
 import {Game} from '../models/game';
 import {Region} from '../models/region';
 import {NewCommand} from '@angular/cli/commands/new-impl';
+import {AbstractNameProperty} from '../models/abstract-name';
 
 @Component({
   selector: 'app-root',
@@ -22,12 +23,14 @@ export class AppComponent {
   user: User;
   auvergneRA: Region;
   energy: Energy;
+  arrayAbstractType: Array<AbstractNameProperty>;
 
   constructor() {
     this.initialiserModel();
     this.remplirTiroir();
     this.initialiserGameLibrary();
     this.howToWorkWithInterface();
+    this.howToWorkWithAbstractClasses();
   }
 
   initialiserModel(): void {
@@ -39,8 +42,7 @@ export class AppComponent {
     const essence = new Energy(2, 'Essence');
     const electrique = new Energy(3, 'Electrique');
     // Assignation via les propriétés pour un objet avec un constructeur vide
-    this.model = new Model();
-    this.model.name = 'Astra';
+    this.model = new Model('Astra');
     this.model.brand = this.brand;
     this.model.addEnergy(essence);
     this.model.addEnergy(diesel);
@@ -103,6 +105,43 @@ export class AppComponent {
     this.auvergneRA.code = '84';
     // Utilisation de la classe Energy qui implémente l'interface InterfaceEnergy
     this.energy = new Energy(1, 'Diesel');
+  }
+
+  howToWorkWithAbstractClasses(): void {
+    this.arrayAbstractType = new Array<AbstractNameProperty>();
+    // Instanciation de la classe Brand, à l'attribut de classe brand
+    this.brand = new Brand(1, 'Opel');
+    // Création de plusieurs énergies
+    // Ici, on créé des instances de la classe/objet Energy
+    const diesel = new Energy(1, 'Diesel');
+    const essence = new Energy(2, 'Essence');
+    const electrique = new Energy(3, 'Electrique');
+    // Assignation via les propriétés pour un objet avec un constructeur vide
+    this.model = new Model('Astra');
+    this.model.brand = this.brand;
+    this.model.addEnergy(essence);
+    this.model.addEnergy(diesel);
+    this.model.addEnergy(electrique);
+    // Model étend le type AbstractNameProperty, du coup Model est aussi de type AbstractNameProperty
+    // Je peux donc l'ajouter à mon tableau, qui va gérer que des objets de type AbstractNameProperty
+    // Idem pour les variables de type Energy !
+    this.arrayAbstractType.push(this.model);
+    this.arrayAbstractType.push(diesel);
+    this.arrayAbstractType.push(essence);
+    this.arrayAbstractType.push(electrique);
+
+    // On itère sur le tableau de nos objet de type AbstractNameProperty
+    for (const abstractType of this.arrayAbstractType) {
+      // On peut vérifier le typage de notre variable via le mot clé instanceof
+      // Par exemple :
+      // Ici on vérifie que l'objet en cours d'itération ai aussi le type Model
+      if (abstractType instanceof Model) {
+        // alert(abstractType.brand.name);
+      // Ici on vérifie que l'objet en cours d'itération ai aussi le type Energy
+      } else if (abstractType instanceof Energy) {
+        // alert(abstractType.id);
+      }
+    }
   }
 }
 

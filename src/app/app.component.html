@@ -414,7 +414,27 @@
 <!--    </p>-->
 <!--  </div>-->
 
-  <p>{{ energy.displayName('Turbo') }}</p>
+  <!-- Code pour afficher l'interface avec méthode "vide" réutilisée depuis un objet de type Energy -->
+
+<!--  <p>{{ energy.displayName('Turbo') }}</p>-->
+
+  <!-- Code pour afficher le tableau d'objet de type AbstractNameProperty -->
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Nom de l'AbstractNameProperty
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let abstractNameProperty of arrayAbstractType">
+        <td>
+          {{ abstractNameProperty.name }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
 </div>
 
