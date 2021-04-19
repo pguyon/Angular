@@ -6,8 +6,12 @@ import {Couvert} from '../models/couvert';
 import {User} from '../models/user';
 import {Library} from '../models/library';
 import {Game} from '../models/game';
-import {Region} from '../models/region';
+import {RegionInterface} from '../models/region';
 import {AbstractNameProperty} from '../models/abstract-name';
+import {Region} from '../models/api-geo/region';
+import {Departement} from '../models/api-geo/departement';
+import {Commune} from '../models/api-geo/commune';
+import {AbstractGeoApi} from '../models/api-geo/abstract-geo-api';
 
 @Component({
   selector: 'app-root',
@@ -20,9 +24,13 @@ export class AppComponent {
   model: Model;
   tiroir: Array<Couvert>;
   user: User;
-  auvergneRA: Region;
+  auvergneRA: RegionInterface;
   energy: Energy;
   arrayAbstractType: Array<AbstractNameProperty>;
+  auvergneRhoneAlpes: Region;
+  allier: Departement;
+  commune: Commune;
+  arrayAbstractGeoApi: Array<AbstractGeoApi>;
 
   constructor() {
     this.initialiserModel();
@@ -30,6 +38,7 @@ export class AppComponent {
     this.initialiserGameLibrary();
     this.howToWorkWithInterface();
     this.howToWorkWithAbstractClasses();
+    this.exerciceLundiGeoApiAffichage();
   }
 
   initialiserModel(): void {
@@ -141,6 +150,16 @@ export class AppComponent {
         // alert(abstractType.id);
       }
     }
+  }
+
+  exerciceLundiGeoApiAffichage(): void {
+    this.auvergneRhoneAlpes = new Region('Auvergne-Rhône-Alpes', '84');
+    this.allier = new Departement('Allier', '03', '84');
+    this.commune = new Commune('Vichy', '03310', '03', '84', ['03200'], 24383);
+    this.arrayAbstractGeoApi = new Array<AbstractGeoApi>();
+    this.arrayAbstractGeoApi.push(this.auvergneRhoneAlpes);
+    this.arrayAbstractGeoApi.push(this.allier);
+    this.arrayAbstractGeoApi.push(this.commune);
   }
 }
 

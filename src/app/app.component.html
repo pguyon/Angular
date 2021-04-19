@@ -419,22 +419,96 @@
 <!--  <p>{{ energy.displayName('Turbo') }}</p>-->
 
   <!-- Code pour afficher le tableau d'objet de type AbstractNameProperty -->
-  <table>
-    <thead>
-      <tr>
-        <th>
-          Nom de l'AbstractNameProperty
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let abstractNameProperty of arrayAbstractType">
-        <td>
-          {{ abstractNameProperty.name }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<!--  <table>-->
+<!--    <thead>-->
+<!--      <tr>-->
+<!--        <th>-->
+<!--          Nom de l'AbstractNameProperty-->
+<!--        </th>-->
+<!--      </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--      <tr *ngFor="let abstractNameProperty of arrayAbstractType">-->
+<!--        <td>-->
+<!--          {{ abstractNameProperty.name }}-->
+<!--        </td>-->
+<!--      </tr>-->
+<!--    </tbody>-->
+<!--  </table>-->
+
+  <!-- Code pour afficher les variables de la GeoApi -->
+<!--  <div>-->
+<!--    <p>-->
+<!--      Nom région-->
+<!--      <strong>{{ auvergneRhoneAlpes.nom }}</strong>-->
+<!--    </p>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <p>-->
+<!--      Code région-->
+<!--      <strong>{{ auvergneRhoneAlpes.code }}</strong>-->
+<!--    </p>-->
+<!--  </div>-->
+<!--  &lt;!&ndash; Affichage du département &ndash;&gt;-->
+<!--  <div>-->
+<!--    <p>-->
+<!--      Nom département-->
+<!--      <strong>{{ allier.nom }}</strong>-->
+<!--    </p>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <p>-->
+<!--      Code département-->
+<!--      <strong>{{ allier.code }}</strong>-->
+<!--    </p>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <p>-->
+<!--      Code région du départment-->
+<!--      <strong>{{ allier.codeRegion }}</strong>-->
+<!--    </p>-->
+<!--  </div>-->
+<!--  &lt;!&ndash; Affichage de la commune &ndash;&gt;-->
+<!--  <div>-->
+<!--    <p>-->
+<!--      Nom commune-->
+<!--      <strong>{{ commune.nom }}</strong>-->
+<!--    </p>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <p>-->
+<!--      Code commune-->
+<!--      <strong>{{ commune.code }}</strong>-->
+<!--    </p>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <p>-->
+<!--      Code département de la commune-->
+<!--      <strong>{{ commune.codeDepartment }}</strong>-->
+<!--    </p>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <p>-->
+<!--      Code région de la commune-->
+<!--      <strong>{{ commune.codeRegion }}</strong>-->
+<!--    </p>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <p>-->
+<!--      Population de la commune-->
+<!--      <strong>{{ commune.population }}</strong>-->
+<!--    </p>-->
+<!--  </div>-->
+
+  <div *ngFor="let abstractGeoApi of arrayAbstractGeoApi">
+    <div>
+      <p>
+        Info de la géolocalisation
+        <strong>{{ abstractGeoApi.afficherGeoApi() }}</strong>
+      </p>
+    </div>
+  </div>
+
 
 </div>
 

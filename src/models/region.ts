@@ -1,5 +1,5 @@
 
-export interface Region {
+export interface RegionInterface {
   nom: string;
   code: string;
 }
