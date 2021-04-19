@@ -10,6 +10,11 @@ export class Couvert {
   }
 
   set name(value: string) {
-    this._name = value;
+    // if value permet de dire que si on passe un undefined, null ou une chaîne de caractères vide, on ne l'ajoute pas
+    if (value) {
+      if (value.length > 3) {
+        this._name = value;
+      }
+    }
   }
 }
